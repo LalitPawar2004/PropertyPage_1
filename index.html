@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>propert_page1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <header>
+    <div class="topnav" id="myTopnav">
+        <a href="#carouselExampleIndicators" class="btn btn-light">Home</a>
+        <a href="#property-detail" class="btn btn-light">Property Details</a>
+        <a href="#description" class="btn btn-light">Description</a>
+        <a href="#location" class="btn btn-light">Location</a>
+        <a href="#contact-us" class="btn btn-light">Contact us</a>
+        <a href="#review" class="btn btn-light">Review</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</header>
+
+  <!-- carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="final.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="final-2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="final-3.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- property -->
+  <section class="lalit-div">
+    <section class="property-listing">
+      <div class="container">
+        <div class="property-card">
+          <div class="property-content">
+            <span class="property-type sale">For Sale</span>
+            <span class="property-type new">NEW LAUNCH - RESIDENTIAL & SHOPPING BRANDS</span>
+            <h3>Avalon Residency Goregaon West, Mumbai - Starting from ₹1.86 Cr++</h3>
+            <span class="property-location"><i class="lni-map-marker"></i> Goregaon MTNL, S.V. Road, Goregaon
+              (West), Mumbai – 400 104., Mumbai, Maharashtra</span>
+            <h3 class="property-price">₹18.6 million</h3>
+            <div class="property-features">
+              <div class="feature">
+                <img src="https://classiclinkrealtors.com/themes/resido/img/bed.svg" width="13" alt="bed icon"> 2
+                Beds
+              </div>
+              <div class="feature">
+                <img src="https://classiclinkrealtors.com/themes/resido/img/bathtub.svg" width="13" alt="bathtub icon">
+                2
+                Baths
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <br>
+    <br>
+
+    <!-- Accordion -->
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Details & Features
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the Details & feature.</strong>
+            <ul class="detail-features">
+              <li><strong>Bedrooms:</strong> 2 Beds</li>
+              <li><strong>Bathrooms:</strong> 2 Baths</li>
+              <li><strong>Floors:</strong> 2</li>
+              <li><strong>Property Type:</strong> New Launch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            Description
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>Description :</strong>
+            <p class="description ">
+              Embark on a journey where every detail is meticulously crafted to perfection. Our direct advisory
+              platform is your guide, ensuring a seamless experience from exploration to ownership. With projects
+              registered under RERA, we assure transparency and accountability at every turn.
+
+              At Avalon Residency, we don't just build homes; we create sanctuaries where luxury transcends mere
+              structures. Partnering with The Balwa Group and A2O Realty, "An Arif Fazlani Venture," we redefine
+              urban living, blending opulence with eco-consciousness.
+
+              Imagine waking up to breathtaking views from two towering skyscrapers, designed with elegance and
+              sophistication. Step onto your spacious balcony, an oasis in the sky, inviting you to soak in the
+              beauty of the surrounding landscape.
+
+              Choose from an array of spacious options, including 2+2 and 3+3 BHKs, each meticulously designed to
+              cater to your every need. For those seeking unparalleled grandeur, explore our beautiful duplexes
+              and penthouses, where luxury knows no bounds.
+
+              Experience the epitome of premium living at Avalon Residency. Schedule your visit now and let us
+              guide you towards your dream home.
+            </p>
+
+            <li><strong>Bedrooms:</strong> 2 Beds</li>
+            <li><strong>Bathrooms:</strong> 2 Baths</li>
+            <li><strong>Floors:</strong> 2</li>
+            <li><strong>Property Type:</strong> New Launch</li>
+
+            <div class="property-image">
+              <img src="property2.jpg" alt="Avalon Residency">
+              <img src="property-image.jpg" alt="Avalon Residency">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+            aria-expanded="true" aria-controls="collapseThree">
+            Facilities
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>Facilities :</strong>
+             <ul class="fac">
+              <li> Lounge Area</li>
+              <li> Party Hall</li>
+              <li> Games Room</li>
+              <li> Kid's Play Area</li>
+              <li> Cricket Turf</li>
+              <li> Multiplay Court for Basketball and Badminton</li>
+              <li> Gym for Men</li>
+              <li> Gym for Women</li>
+              <li> Gazebo Seating</li>
+              <li> Women's Changing Room</li>
+              <li> Swimming Pool Exclusive for Women's</li>
+              <li> Women's Pool Deck with Loungers</li>
+              <li> Men's Changing Room</li>
+              <li> Swimming Pool Exclusive for Men's</li>
+              <li> Men's Pool Deck with Loungers</li>
+             </ul>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+            aria-expanded="true" aria-controls="collapseFour">
+            Gallery
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Images that convince you :</p>
+            <br>
+            <div class="property-image">
+              <!-- Images will go here -->
+              <img src="ok1.jpg" alt="Inside View 1">
+              <img src="ok5.jpg" alt="Inside View 2">
+              <!-- Add more images as needed -->
+            </div>
+            <div class="property-image">
+              <!-- Images will go here -->
+              <img src="ok5.jpg" alt="Inside View 1">
+              <img src="ok1.jpg" alt="Inside View 2">
+              <!-- Add more images as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+            aria-expanded="true" aria-controls="collapseFive">
+            Location
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Aryabhatta college,University of Delhi, Plot No 5, Benito Juarez Marg, South Campus, Anand
+              Niketan,
+              New Delhi,
+              Delhi 110021 :</p>
+            <br>
+            <div class="col-md">
+              <div id="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.7041872015975!2d77.1585344752273!3d28.578644275694188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d02ba9bcb0b23%3A0x17699e9de4def852!2sAryabhatta%20College%2C%20University%20Of%20Delhi!5e0!3m2!1sen!2sin!4v1695356662588!5m2!1sen!2sin"
+                   allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+    <br>
+    <br>
+
+    <div class="contact-section-lalit">
+      <div class="contact-form-container">
+        <h5>Contact Us</h5>
+        <form id="contactForm">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+
+          <label for="country">Country:</label>
+          <div class="country-select">
+            <select id="country" name="country" required>
+              <option value="" disabled selected>Select your country</option>
+              <option value="India">India</option>
+              <option value="Australia">Australia</option>
+              <option value="England">England</option>
+            </select>
+          </div>
+
+          <label for="subject">Subject:</label>
+          <textarea id="subject" name="subject" placeholder="Enter your message" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <style>
+
+      .contact-section-lalit {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        /* Remove default margin */
+        padding: 0;
+        /* Remove default padding */
+        display: flex;
+        /* Center the form vertically and horizontally */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* Full viewport height */
+        border-radius: 8px;
+        background-color: #f2f2f2;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* Light background color */
+      }
+
+      .contact-form-container {
+        max-width: 1100px;
+        /* Maximum width of the form */
+        width: 90%;
+      }
+
+      .contact-form-container input{
+        border-radius: 8px;
+      }
+
+      .contact-form-container textarea{
+        border-radius: 8px;
+      }
+
+      .contact-form-container h5 {
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .country-select {
+        display: flex;
+        justify-content: flex-end;
+        /* Aligns the select to the right */
+      }
+
+      .contact-section-lalit button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+        /* Full width button */
+      }
+
+      .contact-form-container button:hover {
+        background-color: #218838;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 480px) {
+        .contact-form-container {
+          padding: 15px;
+          /* Reduce padding on smaller screens */
+        }
+
+        button {
+          padding: 12px;
+          /* Adjust button padding */
+        }
+      }
+
+      @media (max-width: 800px) {
+        .contact-section-lalit {
+          max-height: 75vh;
+          /* Reduce padding on smaller screens */
+        }
+      }
+
+    </style>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const country = document.getElementById('country').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+
+        // Simple validation
+        if (!firstName || !lastName || !country || !subject) {
+          alert('Please fill in all fields.');
+          return;
+        }
+
+        // Normally, here you would send the data to the server
+        // For demonstration, we will just log it to the console
+        console.log('Form submitted:', { firstName, lastName, country, subject });
+
+        // Clear the form fields
+        document.getElementById('contactForm').reset();
+        alert('Thank you for your submission!');
+      });
+
+    </script>
+
+
+    <br>
+    <br>
+
+    <!-- rating & review-->
+    <div class="lalit-review-section">
+      <div class="review-section">
+        <h5 id="review">Rating and Review</h5>
+
+
+        <div class="rating-group">
+          <label>Service:</label>
+          <div class="rating" data-type="service">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+        </div>
+
+        <div class="rating-group">
+          <label>Value for Money:</label>
+          <div class="rating" data-type="value">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+        </div>
+
+        <div class="rating-group">
+          <label>Location:</label>
+          <div class="rating" data-type="location">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+        </div>
+
+        <div class="rating-group">
+          <label>Cleanliness:</label>
+          <div class="rating" data-type="cleanliness">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+        </div>
+
+        <div id="averageRating" class="message"></div>
+        <textarea placeholder="Write your review..." rows="4"></textarea>
+        <button id="submitReview">Submit Review</button>
+      </div>
+
+      
+
+
+      <script>
+        const ratings = document.querySelectorAll('.rating');
+        let ratingValues = {};
+
+        ratings.forEach(rating => {
+          const stars = rating.querySelectorAll('.star');
+          const type = rating.getAttribute('data-type');
+
+          stars.forEach(star => {
+            star.addEventListener('click', () => {
+              const value = star.getAttribute('data-value');
+              ratingValues[type] = value;
+
+              stars.forEach(s => {
+                s.style.color = s.getAttribute('data-value') <= value ? 'gold' : 'lightgray';
+              });
+
+              calculateAverage(); // Update average when a star is clicked
+            });
+          });
+        });
+
+        function calculateAverage() {
+          if (Object.keys(ratingValues).length === 4) { // Ensure all categories are rated
+            const average = Object.values(ratingValues).reduce((acc, val) => acc + Number(val), 0) / 4;
+            document.getElementById('averageRating').textContent = `Average Rating: ${average.toFixed(2)}`;
+          } else {
+            document.getElementById('averageRating').textContent = ''; // Clear if not all rated
+          }
+        }
+
+        document.getElementById('submitReview').addEventListener('click', () => {
+          const reviewText = document.querySelector('textarea').value;
+
+          if (Object.keys(ratingValues).length < 4) {
+            alert('Please rate all categories!');
+          }
+          else {
+            alert('Rating and review submitted successfully!');
+            // Reset ratings and review text
+            ratingValues = {};
+            document.querySelector('textarea').value = '';
+            ratings.forEach(rating => {
+              const stars = rating.querySelectorAll('.star');
+              stars.forEach(s => s.style.color = 'lightgray'); // Reset stars
+            });
+            document.getElementById('averageRating').textContent = ''; // Clear average rating
+          }
+        });
+      </script>
+
+
+  </section>
+
+
+  <hr>
+
+
+  <!-- Footer-->
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="social-icons">
+            <a href="#" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="#" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i> Faceook
+            </a>
+        </div>
+    </div>
+</footer>
+
+  
+
+
+
+
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
