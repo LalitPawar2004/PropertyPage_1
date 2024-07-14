@@ -250,14 +250,13 @@ input[type=submit] {
 .col-md {
   display: flex;
   flex: 1;
-  /* min-width: 200px; */
+  min-width: 200px;
 }
 
 .col-md .map {
   width: 100%; /* Use full width */
   height: 100%; /* Adjust height to fill parent */
   max-height: 90vh; /* Limit maximum height */
-  position: relative;
 }
 
 .col-md .map iframe {
