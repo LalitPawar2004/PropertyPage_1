@@ -1,418 +1,590 @@
-/* Navbar */
-.topnav {
-  position: fixed;
-  background-color: #f2f2f2;
-  overflow: hidden;
-  width: 100%;
-  z-index: 1000;
-}
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #e74c3c;
+      --accent-color: #3498db;
+      --light-bg: #f8f9fa;
+      --dark-text: #2c3e50;
+      --light-text: #7f8c8d;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #212529;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  background-color: #f2f2f2;
-  border: none;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.6;
+      background-color: #fff;
+    }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: white;
-  color: #212529;
-}
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
 
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  color: #f2f2f2;
-}
+    /* Navbar */
+    .topnav {
+      position: fixed;
+      background-color: rgba(255, 255, 255, 0.95);
+      overflow: hidden;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
 
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
-}
+    .topnav.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      padding: 5px 0;
+    }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 650px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
+    .topnav a {
+      float: left;
+      display: block;
+      color: var(--dark-text);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 16px;
+      background-color: transparent;
+      border: none;
+      transition: var(--transition);
+      font-weight: 500;
+    }
 
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
+    .topnav a:hover {
+      background-color: var(--light-bg);
+      color: var(--secondary-color);
+    }
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 650px) {
-  .topnav.responsive {
-    position: relative;
+    .topnav .icon {
+      display: none;
+    }
 
-  }
+    @media screen and (max-width: 768px) {
+      .topnav a:not(:first-child) {
+        display: none;
+      }
+      
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
 
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+    @media screen and (max-width: 768px) {
+      .topnav.responsive {
+        position: relative;
+      }
+      
+      .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
 
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
+    /* Carousel */
+    .carousel {
+      margin-top: 60px;
+    }
 
-/* Carousel */
-.carousel slide {
-  height : 350px;
-}
+    .carousel-item {
+      height: 70vh;
+      min-height: 400px;
+    }
 
-.estate-div {
-  padding: 10px;
-  margin: 30px;
-}
-
-
-  .property-listing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    border-radius: 8px;
-    background-color: #f2f2f2;
-    box-shadow: rgba(0, 0, 0, 0.5);
-    width: 100%; /* Make it full width */
-    max-width: 100%; /* Set a maximum width */
-    padding: 20px; /* Add some padding */
-    margin: 20px auto; /* Center the box horizontally with margin */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow for better appearance */
-}
-
-.property-listing p {
-  margin: 0; /* Remove default margin */
-  text-align: center; /* Center text */
-}
-
-@media (max-width: 768px) {
-  .property-listing {
-      height: auto; /* Allow height to adjust based on content */
-      padding: 15px; /* Reduce padding on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .property-listing {
-      padding: 10px; /* Further reduce padding for small screens */
-  }
-}
-  
-  .property-image {
-    display: flex;
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .property-image img {
-    width: 50%;
-    max-height:80vh;
-  }
-  
-  .property-content {
-    flex: 2;
-    padding: 30px;
-    max-width: 90%;
-  }
-  
-  .property-type {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-right: 10px;
-    font-size: 0.9em;
-    color: #fff;
-    border-radius: 5px;
-  }
-  
-  .property-type.sale {
-    background-color: #e60000;
-  }
-  
-  .property-type.new {
-    background-color: #007bff;
-  }
-  
-  .property-location {
-    display: block;
-    margin-top: 10px;
-    color: #212529;
-  }
-  
-  .property-price {
-    font-size: 1.5em;
-    color: #e60000;
-    margin-top: 10px;
-  }
-  
-  .property-features {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .feature {
-    display: flex;
-    align-items: center;
-    font-size: 1em;
-  }
-  
-  .feature img {
-    margin-right: 5px;
-  }
-
-  /* accordion */
-  .accordion-button:not(.collapsed) {
-    background-color: #f2f2f2; /* Background color when opened */
-    border: none;
-  }
-
-   .accordion-button{
-    background-color: #f2f2f2;
-    border: none;
-  }  
-
-
-
-
-/* Style the label to display next to the inputs */
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-/* Style the submit button */
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-/* Style the container */
-.container {
-  width: 100%;
-  border-radius: 5px;
-  /* background-color: #f2f2f2; */
-  padding-bottom: 20px;
-}
-
-/* Floating column for labels: 25% width */
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-/* Floating column for inputs: 75% width */
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-
-  .col-25,
-  .col-75,
-  input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-} */
-
-
-.col-md {
-  display: flex;
-  flex: 1;
-  min-width: 200px;
-}
-
-.col-md .map {
-  width: 100%; /* Use full width */
-  height: 100%; /* Adjust height to fill parent */
-  max-height: 90vh; /* Limit maximum height */
-}
-
-.col-md .map iframe {
-  width: 100%; /* Responsive width */
-  height: 100%; /* Responsive height */
-  border: 0; /* Remove default border */
-}
-    
-
-.estate-review-section {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    /* Remove default margin */
-    padding: 10px;
-    /* Remove default padding */
-    display: flex;
-    /* Center the form vertically and horizontally */
-    /* justify-content: center; */
-    /* align-items: center; */
-    width: 100%;
-    height: 100%;
-    /* Full viewport height */
-    border-radius: 8px;
-    background-color: #f2f2f2;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* Light background color */
-}
-
-.estate-review-section h5{
-  text-align: center;
-}
-
-.review-section {
-  width : 100%;
-  padding: 30px;
-}
-.rating-group {
-  margin: 10px 0;
-}
-
-.rating {
-  display: flex;
-  cursor: pointer;
-}
-
-.star {
-  font-size: 30px;
-  color: lightgray;
-  margin-right: 5px;
-}
-
-.star:hover,
-.star:hover~.star {
-  color: gold;
-}
-
-textarea {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  resize: none;
-  /* Prevents resizing on smaller screens */
-}
-
-.review-section button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.review-section button:hover {
-  background-color: #218838;
-}
-
-.message {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  /* Light background */
-  border: 1px solid #ccc;
-  /* Border for the box */
-  border-radius: 5px;
-  text-align: center;
-  /* Center the text */
-  font-weight: bold;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .star {
-    font-size: 24px;
-    /* Smaller stars on mobile */
-  }
-}
-
-  @media (max-width: 800px ) {
-    .estate-review-section{
+    .carousel-item img {
+      object-fit: cover;
       height: 100%;
+      width: 100%;
     }
-  }
 
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      bottom: 20%;
+      left: 10%;
+      right: 10%;
+    }
 
+    /* Property Listing */
+    .estate-div {
+      padding: 40px 20px;
+    }
 
+    .property-listing {
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: var(--transition);
+    }
 
+    .property-listing:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
 
-  /* footer */
+    .property-type {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 0.85em;
+      color: #fff;
+      border-radius: 20px;
+      font-weight: 600;
+    }
 
-  .footer {
-    background-color: #f2f2f2; /* Dark background color */
-    padding: 5px; /* Padding around the footer */
-     /* text-align: center; Centered text */
-} 
+    .property-type.sale {
+      background-color: var(--secondary-color);
+    }
 
-.footer-container {
-    max-width: 1200px; /* Maximum width for larger screens */
-    margin: 0 auto; /* Center the container */
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; Center items */
-}
+    .property-type.new {
+      background-color: var(--accent-color);
+    }
 
-.footer-container a{
-  color: #212529;
-  display: flex;
-  align-items: center;
-}
+    .property-location {
+      display: block;
+      margin-top: 10px;
+      color: var(--light-text);
+      font-size: 1.1em;
+    }
 
-.footer .social-icons {
-    margin-top: 10px; /* Space above the icons */
-    display: flex; /* Use flexbox for icons */
-    justify-content: center; /* Center icons */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-}
+    .property-location i {
+      margin-right: 8px;
+      color: var(--accent-color);
+    }
 
-.footer .social-icons a {
-    color: #212529; /* Icon color */
-    margin: 0 10px; /* Space between icons */
-    text-decoration: none; /* Remove underline */
-    font-size: 20px; /* Size of the icons */
-    transition: color 0.3s; /* Smooth color transition */
-}
+    .property-price {
+      font-size: 1.8em;
+      color: var(--secondary-color);
+      margin-top: 15px;
+      font-weight: 700;
+    }
 
-.footer .social-icons a:hover {
-    color: #f39c12; /* Color on hover */
-}
+    .property-features {
+      display: flex;
+      gap: 25px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
 
-/* Responsive adjustments */
-@media (max-width: 700px) {
+    .feature {
+      display: flex;
+      align-items: center;
+      font-size: 1em;
+      background: var(--light-bg);
+      padding: 8px 15px;
+      border-radius: 30px;
+    }
+
+    .feature img {
+      margin-right: 8px;
+    }
+
+    /* Accordion */
+    .accordion {
+      margin-top: 20px;
+    }
+
+    .accordion-item {
+      border: none;
+      margin-bottom: 15px;
+      border-radius: var(--border-radius) !important;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .accordion-button {
+      background-color: white;
+      color: var(--dark-text);
+      font-weight: 600;
+      padding: 18px 20px;
+      border: none;
+      box-shadow: none;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: var(--light-bg);
+      color: var(--primary-color);
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: rgba(0,0,0,.125);
+    }
+
+    .accordion-body {
+      padding: 25px;
+    }
+
+    .detail-features, .fac {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .detail-features li, .fac li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .detail-features li:before, .fac li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .property-image {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .property-image img {
+      width: calc(50% - 10px);
+      border-radius: var(--border-radius);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .property-image img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      .property-image img {
+        width: 100%;
+      }
+    }
+
+    /* Map */
+    .map {
+      width: 100%;
+      height: 400px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Contact Form */
+    .contact-section-estate {
+      font-family: 'Montserrat', sans-serif;
+      margin: 40px 0;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      background-color: var(--light-bg);
+      box-shadow: var(--box-shadow);
+    }
+
+    .contact-form-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-form-container h5 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+      font-size: 1.8em;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark-text);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      font-family: 'Montserrat', sans-serif;
+      transition: var(--transition);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    .contact-section-estate button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: var(--border-radius);
+      background-color: var(--secondary-color);
+      color: white;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: var(--transition);
+    }
+
+    .contact-section-estate button:hover {
+      background-color: #c0392b;
+      transform: translateY(-2px);
+    }
+
+    /* Review Section */
+    .estate-review-section {
+      font-family: 'Montserrat', sans-serif;
+      margin: 40px 0;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      background-color: var(--light-bg);
+      box-shadow: var(--box-shadow);
+    }
+
+    .review-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .review-section h5 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+      font-size: 1.8em;
+    }
+
+    .rating-group {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .rating-group label {
+      width: 150px;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    .rating {
+      display: flex;
+      cursor: pointer;
+    }
+
+    .star {
+      font-size: 28px;
+      color: #ddd;
+      margin-right: 5px;
+      transition: var(--transition);
+    }
+
+    .star:hover,
+    .star.active {
+      color: gold;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      resize: vertical;
+      min-height: 120px;
+      border-radius: var(--border-radius);
+      border: 1px solid #ddd;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .review-section button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: var(--transition);
+    }
+
+    .review-section button:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .message {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      text-align: center;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .footer .social-icons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
     .footer .social-icons a {
-        font-size: 15px; /* Smaller icons on mobile */
-        margin: 0 5px; /* Less margin on smaller screens */
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-}
 
+    .footer .social-icons a:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #bdc3c7;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--secondary-color);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: #c0392b;
+      transform: translateY(-3px);
+    }
+
+    /* Loading animation */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .carousel-item {
+        height: 50vh;
+      }
+      
+      .property-features {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item {
+        height: 40vh;
+      }
+      
+      .property-listing {
+        padding: 20px;
+      }
+      
+      .rating-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .rating-group label {
+        margin-bottom: 10px;
+      }
+      
+      .footer .social-icons {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .estate-div {
+        padding: 20px 10px;
+      }
+      
+      .contact-section-estate, .estate-review-section {
+        padding: 20px 15px;
+      }
+      
+      .property-price {
+        font-size: 1.5em;
+      }
+    }
