@@ -6,7 +6,7 @@
       } else {
         navbar.classList.remove('scrolled');
       }
-    });
+    }); 
 
     // Back to top button
     const backToTopButton = document.getElementById('backToTop');
