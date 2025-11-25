@@ -1,6 +1,6 @@
 Check out this responsive real estate showcase featuring luxury properties with interactive elements.
 
-✨ Live Demo: 
+✨ Live Demo: https://lalitpawar2004.github.io/PropertyPage_1/
 
 🛠️ Tech Stack:
 
