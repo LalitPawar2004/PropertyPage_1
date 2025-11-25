@@ -1,57 +1,161 @@
-// // navbar
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
+// Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('myTopnav');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 500);
-});
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
+    // Back to top button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Mobile navbar toggle
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
         x.className += " responsive";
-    } else {
+      } else {
         x.className = "topnav";
-    }
-}
-
-
-ScrollReveal().reveal(".contact__image img", {
-    ...scrollRevealOption,
-    origin: "left",
-});
-
-const swiper = new Swiper(".swiper", {
-    loop: true,
-    slidesPerView: "auto",
-    centeredSlides: true,
-    spaceBetween: 30,
-});
-
-
-// contact form
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const fname = document.getElementById('fname').value.trim();
-    const lname = document.getElementById('lname').value.trim();
-    const country = document.getElementById('country').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-
-    // Simple validation
-    if (!fname || !lname || !country || !subject) {
-        alert('Please fill in all fields.');
-        return;
+      }
     }
 
-    // Normally, here you would send the data to the server
-    // For demonstration, we will just log it to the console
-    console.log('Form submitted:', { fname, lname, country, subject });
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const spinner = document.getElementById('submitSpinner');
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      spinner.classList.remove('d-none');
+      
+      // Simulate form submission
+      setTimeout(function() {
+        // Reset form
+        document.getElementById('contactForm').reset();
+        
+        // Hide loading state
+        submitBtn.disabled = false;
+        spinner.classList.add('d-none');
+        
+        // Show success message
+        alert('Thank you for your inquiry! We will contact you shortly.');
+      }, 1500);
+    });
 
-    // Clear the form fields
-    document.getElementById('contactForm').reset();
-	setTimeout(() => {
-        alert('Thank you for your submission!');
-    }, 100); 
-})
+    // Rating system
+    const ratings = document.querySelectorAll('.rating');
+    let ratingValues = {};
+
+    ratings.forEach(rating => {
+      const stars = rating.querySelectorAll('.star');
+      const type = rating.getAttribute('data-type');
+
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          const value = star.getAttribute('data-value');
+          ratingValues[type] = value;
+
+          stars.forEach(s => {
+            if (s.getAttribute('data-value') <= value) {
+              s.classList.add('active');
+              s.style.color = 'gold';
+            } else {
+              s.classList.remove('active');
+              s.style.color = '#ddd';
+            }
+          });
+
+          calculateAverage();
+        });
+
+        // Hover effect
+        star.addEventListener('mouseover', () => {
+          const value = star.getAttribute('data-value');
+          stars.forEach(s => {
+            if (s.getAttribute('data-value') <= value) {
+              s.style.color = 'gold';
+            }
+          });
+        });
+
+        star.addEventListener('mouseout', () => {
+          stars.forEach(s => {
+            if (!s.classList.contains('active')) {
+              s.style.color = '#ddd';
+            }
+          });
+        });
+      });
+    });
+
+    function calculateAverage() {
+      if (Object.keys(ratingValues).length === 4) {
+        const average = Object.values(ratingValues).reduce((acc, val) => acc + Number(val), 0) / 4;
+        document.getElementById('averageRating').textContent = `Average Rating: ${average.toFixed(2)}/5`;
+      } else {
+        document.getElementById('averageRating').textContent = '';
+      }
+    }
+
+    document.getElementById('submitReview').addEventListener('click', () => {
+      const reviewText = document.querySelector('textarea').value;
+
+      if (Object.keys(ratingValues).length < 4) {
+        alert('Please rate all categories!');
+      } else if (!reviewText.trim()) {
+        alert('Please write a review!');
+      } else {
+        alert('Rating and review submitted successfully!');
+        // Reset ratings and review text
+        ratingValues = {};
+        document.querySelector('textarea').value = '';
+        ratings.forEach(rating => {
+          const stars = rating.querySelectorAll('.star');
+          stars.forEach(s => {
+            s.classList.remove('active');
+            s.style.color = '#ddd';
+          });
+        });
+        document.getElementById('averageRating').textContent = '';
+      }
+    });
+
+    // Initialize carousel with autoplay
+    const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleIndicators'), {
+      interval: 5000,
+      wrap: true
+    });
