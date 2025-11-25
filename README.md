@@ -1,4 +1,19 @@
-# PropertyPage_1
-This is a Responsive Landing Page of Real Estate property
+Check out this responsive real estate showcase featuring luxury properties with interactive elements.
 
-Website live on :- https://lalitpawar2004.github.io/PropertyPage_1/
+✨ Live Demo: 
+
+🛠️ Tech Stack:
+
+• Bootstrap 5 for responsive layout
+
+• Interactive Google Maps integration
+
+• Smooth carousel for property images
+
+• Accordion sections for organized content
+
+• Font Awesome icons
+
+• Custom CSS animations
+
+Perfect example of creating engaging user experiences in real estate tech!
